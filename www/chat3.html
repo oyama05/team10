@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/chat.css">
     <script src="components/loader.js"></script>
 <title>掲示板</title>
 </head>
@@ -15,11 +16,18 @@
     <script>
         
     </script>
-<body>
+<body style="background-color: #D9F1F6">
+    <div class="return">
+    <a href="index.html">＜ 戻る</a>
+  </div>
       <form id="form1" action="#">
     名前：<input type="text" id="input_name" value=""><br>
+    <div class="inputtext">
     本文：<input type="text" id="input_message" value=""><br>
+    </div>
+      <div class="inputbutton">
     <input type="button" onclick="func1()" value="送信">
+    </div>
   </form>
   <div id="output_message"></div>
   <!--div id="output"></div-->
@@ -64,6 +72,5 @@
     //localStorage.setItem('2',input);
   }
   </script>
-  <a href="javascript:history.back()">戻る</a>
 </body>
 </html>
