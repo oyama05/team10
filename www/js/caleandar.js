@@ -232,7 +232,6 @@ function createCalendar(calendar, element, adjuster){
       var weekMod = ((i+1) + calendar.Selected.FirstDay) % 7;
       if (weekMod == 1) {
         number.className += " sunday";
-        console.log("sunday, " + (i+1));
       }
       // 土曜日か確認
       else if (weekMod == 0) {
