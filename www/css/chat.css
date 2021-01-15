@@ -1,0 +1,16 @@
+/* This is a CSS file */
+  .return a{
+    color: #44AAFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14pt;
+    width: 100pt;
+    height: 100pt;
+    font-family: Arial, Meiryo;
+  }
+
+  .inputbutton{
+    text-align: right;
+  }
+
+

@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
 	<link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="css/caleandar.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
@@ -15,19 +16,19 @@
 			border: solid;
 		}
     ul, ol {
-  padding: 0;
-  position: relative;
-}
+      padding: 0;
+      position: relative;
+    }
 
-ul li, ol li {
-  color: #2d8fdd;
-  border-left: solid 6px #2d8fdd;/*左側の線*/
-  background: #f1f8ff;/*背景色*/
-  margin-bottom: 3px;/*下のバーとの余白*/
-   line-height: 1.5;
-  padding: 0.5em;
-  list-style-type: none!important;/*ポチ消す*/
-}
+    ul li, ol li {
+      color: #2d8fdd;
+      border-left: solid 6px #2d8fdd;/*左側の線*/
+      background: #f1f8ff;/*背景色*/
+      margin-bottom: 3px;/*下のバーとの余白*/
+      line-height: 1.5;
+      padding: 0.5em;
+      list-style-type: none!important;/*ポチ消す*/
+    }
 	</style>
 	<!-- Make sure you put this AFTER Leaflet's CSS -->
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -37,9 +38,11 @@ ul li, ol li {
 	
 </head>
 
-<body>
+<body style="background-color: #D9F1F6">
 	<!-- TODO: Please edit here -->
-  <a href="javascript:history.back()"><戻る</a></button>
+  <div class="return">
+    <a href="index.html">＜ 戻る</a>
+  </div>
   <br>
 	<h2>●現在地周辺の本日の試合情報</h2>
 	<div id="mapid"></div>
@@ -63,11 +66,11 @@ ul li, ol li {
         // マーカー画像の場所を指定する
         var features = [];
         var place = [{
-          "name": "豊島区立南池袋公園",
+          "name": "⚽豊島区立南池袋公園",
           "lat": "35.727587",
           "long": "139.714377"
         }, {
-          "name": "豊島区立池袋西口公園",
+          "name": "🏈豊島区立池袋西口公園",
           "lat": "35.730122",
           "long": "139.708788"
         }, ]
@@ -87,7 +90,10 @@ ul li, ol li {
     L.geoJson(features, {
     onEachFeature: function(features, layer) {
       if (features.properties &&  features.properties.name) {
-      layer.bindPopup(features.properties.name);
+        layer.bindPopup(features.properties.name);
+        layer.on('mouseover', function(e) {
+          this.openPopup();
+        });
       }
     }
   }).addTo(map);
