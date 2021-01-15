@@ -53,10 +53,10 @@
     //  input = input_message + "<br>" + getjson;
     //}
     if (getjson == null) {
-      input_message = input_name +" " + datetime +"<br>" + input_message + "<br> 👍 0 💬 0";
+      input_message = input_name +" " + datetime +"<br>" + input_message + "<br> 👍 0 💬 0" + "<hr>";
     }
     else {
-      input_message = input_name +" " + datetime +"<br>" + input_message + "<br> 👍 0 💬 0<br>" + getjson;
+      input_message = input_name +" " + datetime +"<br>" + input_message + "<br> 👍 0 💬 0<br>" + "<hr>" + getjson;
     }
     document.getElementById("output_message").innerHTML = input_message;
     localStorage.removeItem('1');
