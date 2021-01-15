@@ -1,0 +1,58 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+<title>掲示板</title>
+</head>
+<h1>テスト公園掲示板</h1>
+<section>
+</section>
+    <script>
+        
+    </script>
+<body>
+      <form id="form1" action="#">
+    名前：<input type="text" id="input_name" value=""><br>
+    本文：<input type="text" id="input_message" value=""><br>
+    <input type="button" onclick="func1()" value="送信">
+  </form>
+  <div id="output_message"></div>
+  <div id="output"></div>
+  <script language="javascript" type="text/javascript">
+        var getjson = localStorage.getItem('2');
+        document.getElementById("output").innerHTML = getjson;
+        var now = new Date();
+        localStorage.removeItem('1');
+  function func1() {
+      var getjson1 = localStorage.getItem('1');
+      var getjson = localStorage.getItem('2');
+      var Month = now.getMonth()+1;
+      var Date = now.getDate();
+      var Hour = now.getHours();
+      var Min = now.getMinutes();
+      var Sec = now.getSeconds();
+    var input_name = document.getElementById("input_name").value;
+    var input_message = document.getElementById("input_message").value;
+    var datetime =  Month + "/" + Date + " " + Hour + ":" + Min + ":" + Sec;
+    if(getjson1 == null)
+    {
+      input_message =input_name +" " + datetime +"<br>" + input_message + "<br>";
+    }
+    else
+    {
+      input_message = input_name +" " + datetime +"<br>" + input_message + "<br>" + getjson1;
+      input = input_message + "<br>" + getjson;
+    }
+    document.getElementById("output_message").innerHTML = input_message;
+    localStorage.setItem('1',input_message);
+    localStorage.setItem('2',input);
+  }
+  </script>
+  <a href="javascript:history.back()">戻る</a>
+</body>
+</html>
