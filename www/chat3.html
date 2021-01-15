@@ -38,8 +38,8 @@
       var Month = now.getMonth()+1;
       var date = now.getDate();
       var Hour = now.getHours();
-      var Min = now.getMinutes();
-      var Sec = now.getSeconds();
+      var Min = ("0"+now.getMinutes()).slice(-2)
+      var Sec = ("0"+now.getSeconds()).slice(-2)
     var input_name = document.getElementById("input_name").value;
     var input_message = document.getElementById("input_message").value;
     var datetime =  Month + "/" + date + " " + Hour + ":" + Min + ":" + Sec;
@@ -53,10 +53,10 @@
     //  input = input_message + "<br>" + getjson;
     //}
     if (getjson == null) {
-      input_message = input_name +" " + datetime +"<br>" + input_message;
+      input_message = input_name +" " + datetime +"<br>" + input_message + "<br> 👍 0 💬 0";
     }
     else {
-      input_message = input_name +" " + datetime +"<br>" + input_message + "<br>" + getjson;
+      input_message = input_name +" " + datetime +"<br>" + input_message + "<br> 👍 0 💬 0<br>" + getjson;
     }
     document.getElementById("output_message").innerHTML = input_message;
     localStorage.removeItem('1');
