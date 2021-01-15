@@ -101,7 +101,7 @@ function createDailyYotei(calendar, element, adjuster){
             if (caption.innerHTML.length != 0) {
               caption.innerHTML += '<br>';
             }
-            caption.innerHTML += "<a href='http://www.yahoo.co.jp'>" + calendar.Model[n].Title + "　@" + calendar.Model[n].Location + "　" + calendar.Model[n].Time + "</a>";
+            caption.innerHTML += "<a href='index.html'>" + calendar.Model[n].Title + "　@" + calendar.Model[n].Location + "　" + calendar.Model[n].Time + "</a>";
           }
         }
         day.appendChild(number);

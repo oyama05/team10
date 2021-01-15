@@ -227,6 +227,18 @@ function createCalendar(calendar, element, adjuster){
         }
       }
       var number = DayNumber(i+1);
+      
+      // 日曜日か確認
+      var weekMod = ((i+1) + calendar.Selected.FirstDay) % 7;
+      if (weekMod == 1) {
+        number.className += " sunday";
+        console.log("sunday, " + (i+1));
+      }
+      // 土曜日か確認
+      else if (weekMod == 0) {
+        number.className += " saturday";
+      }
+
       // Check Date against Event Dates
       var title = document.createElement('span');
       title.className += "cld-title";
@@ -272,7 +284,7 @@ function createCalendar(calendar, element, adjuster){
             if (title.innerHTML.length != 0) {
               title.innerHTML += '<br>';
             }
-            title.innerHTML += "<a href='http://www.yahoo.co.jp'>" + category[calendar.Model[n].Category] + " " + calendar.Model[n].Title + '</@>';
+            title.innerHTML += "<a href='index.html'>" + category[calendar.Model[n].Category] + " " + calendar.Model[n].Title + '</@>';
           }
           number.appendChild(title);
         }

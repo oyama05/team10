@@ -133,8 +133,14 @@
      border-right: 7.5px solid transparent;
      border-bottom: 7.5px solid #ccc;
   }
+  .cld-number.sunday{
+    color: red;
+  }
+  .cld-number.saturday{
+    color: blue;
+  }
   .cld-number.eventday{
-     font-weight: bold;
+     /*ont-weight: bold;*/
      /*color: #0080FF;*/
   }
   .cld-number.eventday:hover{
