@@ -7,28 +7,28 @@ var events = [
       'Time': '18:00-22:00'
     },
     {
-      'Date': new Date(2021, 0, 9),
+      'Date': new Date(2021, 0, 12),
       'Category': '1',
       'Title': '鹿島 VS 川崎',
       'Location': 'がやがや広場',
       'Time': '19:00-22:00'
     },
     {
-      'Date': new Date(2020, 11, 2),
+      'Date': new Date(2020, 11, 6),
       'Category': '2',
       'Title': 'パッキャオ VS メイウェザー',
       'Location': 'どやどやパーク',
       'Time': '19:00-21:00'
     },
     {
-      'Date': new Date(2020, 11, 2),
+      'Date': new Date(2020, 11, 6),
       'Category': '2',
       'Title': 'モスラ VS ゴジラ',
       'Location': 'どやどやパーク',
       'Time': '21:00-23:00'
     },
     {
-      'Date': new Date(2021, 1, 3),
+      'Date': new Date(2021, 1, 1),
       'Category': '3',
       'Title': '日本 VS ニュージーランド',
       'Location': 'がちゃがちゃプラザ',
